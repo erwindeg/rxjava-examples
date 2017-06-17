@@ -1,4 +1,4 @@
-package rxjava;
+package nl.edegier.rxjava.filereader;
 
 
 import java.io.IOException;
