@@ -13,12 +13,13 @@ public class PersonExample {
     BigDecimal totalIncome = BigDecimal.ZERO;
 
     public void getIncomeForElderly() {
-        repository.findByName("Erwin", persons ->
-                persons.stream().filter(person -> person.getAge() >= 65).forEach(person -> {
-                    repository.getIncome(person, income ->
-                            totalIncome = totalIncome.add(income)
-                    );
-                })
+        repository.findByName("Erwin", persons -> {
+                    persons.stream().filter(person -> person.getAge() >= 65).forEach(person -> {
+                        repository.getIncome(person, income ->
+                                totalIncome = totalIncome.add(income)
+                        );
+                    });
+                }
         );
     }
 
